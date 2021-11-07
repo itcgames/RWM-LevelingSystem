@@ -49,4 +49,39 @@ public class CharacterLevelingTests
         }
         yield return null;
     }
+
+    [UnityTest]
+    public IEnumerator ThresholdIncrease()
+    {
+        if (leveling != null)
+        {
+            int threshold = 50;
+            leveling.SetThreshold(threshold);
+            leveling.GainExperience(threshold);
+            int diff = leveling.getThreshold() - threshold;
+            leveling.GainExperience(threshold * 2);
+            int diff2 = leveling.getThreshold() - threshold;
+            yield return new WaitForEndOfFrame();
+            Assert.Less(diff, diff2);
+        }
+        yield return null;
+    }
+
+
+    [UnityTest]
+    public IEnumerator ThresholdChangeOnLevel()
+    {
+        if (leveling != null)
+        {
+            int threshold = 50;
+            leveling.SetThreshold(threshold);
+            leveling.GainExperience(threshold);
+            yield return new WaitForEndOfFrame();
+            int newThreshold = leveling.getThreshold();
+            Assert.AreNotEqual(threshold, newThreshold);
+        }
+        yield return null;
+    }
+
+
 }

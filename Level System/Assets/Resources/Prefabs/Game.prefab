@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6115527776f2d34c8efd4ece0d8e468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelThreshold: 0
+  _levelThreshold: 100
   _levelScaler: 0
   _MAX_LEVEL: 15
 --- !u!1 &7212720021283655008

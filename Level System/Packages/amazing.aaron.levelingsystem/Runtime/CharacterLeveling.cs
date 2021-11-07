@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class CharacterLeveling : MonoBehaviour
 {
-    int _level;
-    int _experience;
-    [SerializeField] int _levelThreshold;
+    int _level = 1;
+    int _experience = 0;
+    [SerializeField] int _levelThreshold = 100;
     [SerializeField] float _levelScaler;
     [SerializeField] int _MAX_LEVEL = 100;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        _level = 1;
-        _experience = 0;
+        _levelScaler = 0.5f;
     }
 
     public void GainExperience(int t_experience)
     {
         _experience += t_experience;
-        if (_experience > _levelThreshold)
+        if (_experience >= _levelThreshold)
         {
             ++_level;
             _experience -= _levelThreshold;
+            _levelThreshold = _levelThreshold + (int)(_levelThreshold * _levelScaler);
         }
     }
 
