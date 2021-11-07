@@ -32,8 +32,20 @@ public class CharacterLevelingTests
             Assert.True(1 == leveling.getLevel());
             leveling.SetThreshold(100); 
             leveling.GainExperience(101);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForEndOfFrame();
             Assert.Greater(leveling.getLevel(), 1);
+        }
+        yield return null;
+    }
+
+    [UnityTest]
+    public IEnumerator ThresholdTest()
+    {
+        if (leveling != null)
+        {
+            leveling.SetThreshold(50);
+            yield return new WaitForEndOfFrame();
+            Assert.AreEqual(50, leveling.getThreshold());
         }
         yield return null;
     }

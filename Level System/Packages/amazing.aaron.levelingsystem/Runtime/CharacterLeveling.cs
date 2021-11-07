@@ -36,4 +36,9 @@ public class CharacterLeveling : MonoBehaviour
     {
         return _level;
     }
+
+    public int getThreshold()
+    {
+        return _levelThreshold;
+    }
 }
