@@ -25,7 +25,7 @@ public class CharacterLevelingTests
     }
 
     [UnityTest]
-    public IEnumerator ThresholdTest()
+    public IEnumerator ExperiencePoints()
     {
         if (leveling != null)
         {

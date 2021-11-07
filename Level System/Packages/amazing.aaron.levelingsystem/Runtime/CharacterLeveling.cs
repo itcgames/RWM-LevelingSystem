@@ -24,7 +24,6 @@ public class CharacterLeveling : MonoBehaviour
         {
             ++_level;
             _experience -= _levelThreshold;
-            _levelThreshold = _levelThreshold + (int)(_levelThreshold * _levelScaler);
         }
     }
 
