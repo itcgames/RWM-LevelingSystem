@@ -22,10 +22,34 @@ namespace Tests
         public IEnumerator thresholdDrop()
         {
             CharacterLeveling c = new CharacterLeveling();
-            c.setThreshold(50);
-            c.addExperience(100);
+            int experienceNeeded = 50;
+            c.setThreshold(experienceNeeded);
+            c.addExperience(experienceNeeded + 1);
             yield return null;  
-            Assert.AreEqual(50, c.getExperience());
+            Assert.AreEqual(1, c.getExperience());
+        }
+
+        [UnityTest]
+        public IEnumerator levelIncrease()
+        {
+            CharacterLeveling c = new CharacterLeveling();
+            int experienceNeeded = 50;
+            c.setThreshold(experienceNeeded);
+            c.addExperience(experienceNeeded + 1);
+            yield return null;
+            Assert.AreEqual(2, c.getLevel());
+        }
+
+        [UnityTest]
+        public IEnumerator maxLevel()
+        {
+            CharacterLeveling c = new CharacterLeveling();
+            int experienceNeeded = 50;
+            c.setThreshold(experienceNeeded);
+            c.setMaxLevel(1);
+            c.addExperience(experienceNeeded + 1);
+            yield return null;
+            Assert.AreEqual(1, c.getLevel());
         }
     }
 }
