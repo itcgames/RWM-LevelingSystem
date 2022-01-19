@@ -2,13 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
+public struct Abilities
+{
+    public int _boundLevel;
+    public Ability _ability;
+}
+
 public class CharacterLeveling : MonoBehaviour
 {
     private float _experience;
     [SerializeField] private float _threshold;
     private int _level = 1;
     [SerializeField] private int _maxLevel = 10;
-
+    [SerializeField] Abilities[] _levelAbilities;
 
     public void addExperience(float t_experienceGained)
     {
