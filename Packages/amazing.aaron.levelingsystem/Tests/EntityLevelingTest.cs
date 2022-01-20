@@ -18,5 +18,15 @@ namespace Tests
             yield return null;
             Assert.AreNotEqual(1, e.getLevel());
         }
+
+        [UnityTest]
+        public IEnumerator MaxLevelCheck()
+        {
+            EntityLeveling e = new EntityLeveling();
+            e.setMaxLevel(1); // set max Level to 1
+            e.levelUp(); // try level up
+            yield return null;
+            Assert.AreEqual(1, e.getLevel()); // make sure i didnt exceed the max level
+        }
     }
 }
