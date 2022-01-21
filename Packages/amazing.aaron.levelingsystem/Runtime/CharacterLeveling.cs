@@ -53,4 +53,9 @@ public class CharacterLeveling : MonoBehaviour
     {
         return _threshold;
     }
+
+    public float getPercentage()
+    {
+        return _experience / _threshold;
+    }
 }
