@@ -13,6 +13,7 @@ public class EntityLeveling : MonoBehaviour
         if (_level < _maxLevel)
         {
             _level++;
+            if (_levelAbilities != null)
             foreach (var pair in _levelAbilities)
                 if (pair._boundLevel == _level)
                     pair._ability.Execute(gameObject);
