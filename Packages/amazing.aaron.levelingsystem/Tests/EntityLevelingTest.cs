@@ -27,6 +27,6 @@ namespace Tests
             e.levelUp(); // try level up
             yield return null;
             Assert.AreEqual(1, e.getLevel()); // make sure i didnt exceed the max level
-        }
+        }   
     }
 }
