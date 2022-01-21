@@ -18,10 +18,6 @@ namespace Tests
             yield return null;
             Assert.AreNotEqual(1, e.getLevel());
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 7939d8f (Completed Task: Max Level [IN-9])
 
         [UnityTest]
         public IEnumerator MaxLevelCheck()
@@ -32,10 +28,5 @@ namespace Tests
             yield return null;
             Assert.AreEqual(1, e.getLevel()); // make sure i didnt exceed the max level
         }
-<<<<<<< HEAD
-=======
->>>>>>> f4490f6 (Completed Task: Entity Level [IN-10])
-=======
->>>>>>> 7939d8f (Completed Task: Max Level [IN-9])
     }
 }
