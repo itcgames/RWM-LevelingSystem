@@ -21,7 +21,7 @@ public class Level_UI_Text : MonoBehaviour
             gameObject.SetActive(false);    
         else if (_style == TextStyle.PERCENTAGE)
         {
-            string text = _character.getPercentage().ToString();
+            string text = (_character.getPercentage() * 100.0f).ToString();
             text += '%';
             GetComponent<Text>().text = text;
         }
