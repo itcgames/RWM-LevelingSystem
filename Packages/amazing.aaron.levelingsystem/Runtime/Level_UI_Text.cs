@@ -15,15 +15,14 @@ public class Level_UI_Text : MonoBehaviour
 
     public CharacterLeveling _character;
     public TextStyle _style;
-
     void Update()
     {
         if (_style == TextStyle.NONE)
-            GetComponent<Text>().text = "";
+            gameObject.SetActive(false);    
         else if (_style == TextStyle.PERCENTAGE)
         {
-            string text = (_character.getPercentage() * 100f).ToString();
-            text += "%";
+            string text = _character.getPercentage().ToString();
+            text += '%';
             GetComponent<Text>().text = text;
         }
         else
