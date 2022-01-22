@@ -13,7 +13,7 @@ public struct Abilities
 public class CharacterLeveling : MonoBehaviour
 {
     private float _experience;
-    [SerializeField] private float _threshold;
+    [SerializeField] private float _threshold = 100;
     private int _level = 1;
     [SerializeField] private int _maxLevel = 10;
     [SerializeField] Abilities[] _levelAbilities;
