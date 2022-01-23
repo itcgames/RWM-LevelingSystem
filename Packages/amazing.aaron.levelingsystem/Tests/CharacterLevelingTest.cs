@@ -12,6 +12,7 @@ namespace Tests
         public IEnumerator GainExperience()
         {
             CharacterLeveling c = new CharacterLeveling();
+            c.setThreshold(101);
             c.addExperience(100);
             yield return null;
             Assert.Greater(c.getExperience(), 0);
