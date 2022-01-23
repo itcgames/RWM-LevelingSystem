@@ -601,12 +601,12 @@ PrefabInstance:
     - target: {fileID: 196753592050265892, guid: 2d249253e647f49439c26224de331e0b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4181469796715988449, guid: 2d249253e647f49439c26224de331e0b,
         type: 3}
       propertyPath: m_Text
-      value: 0
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4983733436416265763, guid: 2d249253e647f49439c26224de331e0b,
         type: 3}
