@@ -15,13 +15,11 @@ public class Level_UI_Text : MonoBehaviour
 
     public CharacterLeveling _character;
     public TextStyle _style;
-    
 
-    // Update is called once per frame
-    void Update()
+    void OnValidate()
     {
         if (_style == TextStyle.NONE)
-            gameObject.SetActive(false);    
+            GetComponent<Text>().text = "";
         else if (_style == TextStyle.PERCENTAGE)
         {
             string text = (_character.getPercentage() * 100.0f).ToString();

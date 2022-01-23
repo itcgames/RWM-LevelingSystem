@@ -51,4 +51,34 @@ public class Level_UI_Foreground : MonoBehaviour
             GetComponent<RectTransform>().localPosition = new Vector3(offset, -size.y / 2, 0f);
         }
     }
+
+    void OnValidate()
+    {
+        Vector2 size = GetComponent<RectTransform>().sizeDelta;
+        Vector2 totalSize = _parent.GetComponent<RectTransform>().sizeDelta;
+        float percentage = 0.25f;
+        size.x = totalSize.x * percentage;
+        GetComponent<RectTransform>().sizeDelta = size;
+
+        if (_fillType == ExpFillDirection.LEFT_TO_RIGHT)
+        {
+            float offset = (totalSize.x - (totalSize.x * 0.95f)) / 2f;
+            GetComponent<RectTransform>().localPosition = new Vector3(offset, -size.y / 2, 0f);
+        }
+        else if (_fillType == ExpFillDirection.RIGHT_TO_LEFT)
+        {
+            float border = (totalSize.x - (totalSize.x * 0.95f)) / 2f;
+            float pos = totalSize.x - border;
+            pos -= (size.x * 0.9f);
+            GetComponent<RectTransform>().localPosition = new Vector3(pos, -size.y / 2, 0f);
+        }
+        else if (_fillType == ExpFillDirection.CENTER_FILL)
+        {
+            float border = (totalSize.x - (totalSize.x * 0.95f)) / 2f;
+            float offset = totalSize.x / 2f;
+            offset -= size.x / 2f;
+            offset += border * 2f;
+            GetComponent<RectTransform>().localPosition = new Vector3(offset, -size.y / 2, 0f);
+        }
+    }
 }
