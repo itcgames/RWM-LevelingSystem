@@ -22,13 +22,13 @@ public class Level_UI_Text : MonoBehaviour
             GetComponent<Text>().text = "";
         else if (_style == TextStyle.PERCENTAGE)
         {
-            string text = (_character.getPercentage() * 100f).ToString();
+            string text = ((int)(_character.getPercentage() * 100f)).ToString();
             text += "%";
             GetComponent<Text>().text = text;
         }
         else
         {
-            string text = _character.getExperience().ToString();
+            string text = ((int)_character.getExperience()).ToString();
             GetComponent<Text>().text = text;
         }
     }
