@@ -25,7 +25,14 @@ public class CharacterLeveling : MonoBehaviour
         {
             _experience -= _threshold;
             if (_level < _maxLevel)
+            {
+                setThreshold(_threshold + 10 * _level);
                 _level++;
+
+                foreach (Abilities ability in _levelAbilities)
+                    if (ability._boundLevel == _level)
+                        ability._ability.Execute(gameObject);
+            }
         }
     }
 
