@@ -36,11 +36,8 @@ public class Level_UI_Text : MonoBehaviour
     void OnValidate()
     {
         if (_style == TextStyle.NONE)
-            gameObject.SetActive(false);
-        else 
-            gameObject.SetActive(true);
-
-        if (_style == TextStyle.PERCENTAGE)
+            GetComponent<Text>().text = "";
+        else if (_style == TextStyle.PERCENTAGE)
         {
             string text = "25%";
             GetComponent<Text>().text = text;
